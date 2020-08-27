@@ -1,0 +1,290 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*General*/
+
+* {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: 'nytimperialregular', Georgia, 'Times New Roman', Times, serif;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+  max-height: 100%;
+  color: #333;
+  text-align: justify;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+svg {
+  width: 17px;
+  height: 17px;
+  fill: black;
+}
+
+a,
+button
+.inflation,
+.article__nav,
+.article__author {
+  font-family: 'nytfranklincwmedium', Helvetica, Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+p {
+  font-size: 20px;
+  line-height: 30px;
+}
+
+.button {
+  padding: 1em 1.5em;
+  background-color: rgb(86, 123, 149);
+  border: 1px solid rgb(50, 104, 145);
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.social {
+  background-color: #eee;
+  height: 27px;
+  width: 27px;
+  padding: 5px;
+  margin: 0 .5em;
+  border-radius: 50%;
+}
+
+/*Header*/
+
+.header {
+  border: 1px solid red;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: .25em 7em;
+  font-size: 14px;
+  width: 100%;
+}
+
+.header_nav {
+  display: flex;
+}
+
+.header__nav > * {
+  margin-right: 1em;
+}
+
+.header__logo {
+  width: 200px;
+  height: auto;
+}
+
+.header__nav a {
+  font-weight: 700;
+}
+
+/*Main*/
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80vw;
+}
+
+main > p,
+.article__author,
+.bicep2,
+h2 {
+  max-width: 600px;
+  margin: .75em 0;
+  width: 100%;
+}
+
+.article__nav {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.article__author,
+.article__nav {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.article__author a {
+  text-decoration: underline rgb(185, 185, 185);
+}
+
+.article__date {
+  font-size: 14px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+figure {
+  margin: 2.5em 0;
+}
+
+figcaption {
+  color: #666;
+  font-size: 15px;
+}
+
+.figure__credit {
+  color: #888;
+  font-size: 13px;
+}
+
+h1 {
+  font-size: 2.5rem;
+  line-height: 3rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+.bookmark {
+  height: 27px;
+  width: 27px;
+}
+
+  /*Thanks*/
+
+  
+
+  /*Inflation*/
+
+.inflation {
+  max-width: 900px;
+  margin: 1.5em 0;
+  font-family: 'nytfranklincwmedium', Helvetica, Arial, sans-serif;
+}
+
+.inflation header p,
+.inflation header h2 {
+  font-family: 'nytcheltenhammedium', 'nytfranklincwmedium', Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 18px;
+  color: rgb(102,102,102);
+}
+
+.inflation header h2 {
+  font-size: 20px;
+  color: #333;
+
+}
+
+.inflation ul {
+  display: grid;
+  grid-gap: 10px;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  align-items: start;
+}
+
+.inflation ul:after {
+  margin: 1em 0;
+  content: "";
+  height: 1px;
+  width: 70px;
+  background-color: #333;
+}
+
+.inflation__item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-flow: row;
+  min-width: 0;
+}
+
+.inflation p {
+  font-size: 14.5px;
+  line-height: 17px;
+  font-weight: 300;
+  overflow-wrap: anywhere;
+}
+
+.inflation footer {
+  font-size: 13.5px;
+}
+
+.inflation strong {
+  font-weight: bold;
+  font-size: 11px;
+  letter-spacing: .05em;
+}
