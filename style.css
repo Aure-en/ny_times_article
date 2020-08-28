@@ -47,7 +47,7 @@ table {
 	border-spacing: 0;
 }
 
-/*General*/
+/*---General---*/
 
 * {
   -webkit-box-sizing: border-box;
@@ -77,11 +77,19 @@ svg {
   fill: black;
 }
 
+strong {
+  font-weight: bold;
+}
+
 a,
-button
+button,
 .inflation,
 .article__nav,
-.article__author {
+.article__author,
+.thanks,
+h3,
+h5,
+.nav {
   font-family: 'nytfranklincwmedium', Helvetica, Arial, sans-serif;
 }
 
@@ -111,24 +119,40 @@ p {
   height: 27px;
   width: 27px;
   padding: 5px;
-  margin: 0 .5em;
+  margin-left: 1em;
   border-radius: 50%;
 }
 
-/*Header*/
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*---Header---*/
 
 .header {
-  border: 1px solid red;
+  position: fixed;
+  background-color: #fff;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: .25em 7em;
   font-size: 14px;
   width: 100%;
+  border: 1px solid #e2e2e2;
+  box-shadow: 0 1px 5px #e2e2e2;
+}
+
+@media all and (max-width: 1020px) {
+  .header {
+    position: static;
+    padding: .75em 1em;
+  }
 }
 
 .header_nav {
   display: flex;
+  align-items: center;
 }
 
 .header__nav > * {
@@ -144,19 +168,53 @@ p {
   font-weight: 700;
 }
 
-/*Main*/
+/*---Main---*/
 
 main {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 80vw;
+  padding: 5 1em 0 1em;
+}
+
+h1 {
+  font-size: 2.25rem;
+  line-height: 3rem;
+  font-weight: 700;
+  font-style: italic;
+  color: #121212;
+  max-width: 600px;
+}
+
+@media all and (max-width: 600px) {
+  h1 {
+    font-size: 35px;
+    margin: 0 1em;
+  }
+}
+
+.article__hero {
+  max-width: 1200px;
+}
+
+@media all and (max-width: 1020px) {
+  main {
+    width: 100vw;
+    max-width: 100%;
+    padding: 2.5em 1em 0 1em;
+  }
+
+  figcaption {
+    margin: 0 1em;
+  }
 }
 
 main > p,
 .article__author,
 .bicep2,
-h2 {
+h2,
+.main__footer {
   max-width: 600px;
   margin: .75em 0;
   width: 100%;
@@ -185,11 +243,6 @@ h2 {
   font-size: 14px;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-}
-
 figure {
   margin: 2.5em 0;
 }
@@ -204,18 +257,10 @@ figcaption {
   font-size: 13px;
 }
 
-h1 {
-  font-size: 2.5rem;
-  line-height: 3rem;
-  font-weight: 700;
-  font-style: italic;
-}
-
 h2 {
   font-size: 20px;
   font-weight: bold;
 }
-
 
 .bookmark {
   height: 27px;
@@ -224,14 +269,34 @@ h2 {
 
   /*Thanks*/
 
-  
+.thanks {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.thanks:before,
+.thanks:after {
+  content: "";
+  width: 65px;
+  height: 1px;
+  background: #ccc;
+  margin: 1em 0;
+}
+
+.thanks a {
+  color: #326891;
+}
 
   /*Inflation*/
 
 .inflation {
   max-width: 900px;
   margin: 1.5em 0;
-  font-family: 'nytfranklincwmedium', Helvetica, Arial, sans-serif;
+  color: #000;
 }
 
 .inflation header p,
@@ -284,7 +349,356 @@ h2 {
 }
 
 .inflation strong {
-  font-weight: bold;
   font-size: 11px;
   letter-spacing: .05em;
+}
+
+  /*Video*/
+
+.youtube_video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+
+.youtube_video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+  /*Main Footer*/
+
+.main__footer {
+  display: grid;
+  grid-template: repeat(2, auto) / repeat(2, 1fr);
+  align-items: center;
+  grid-gap: 1em;
+}
+
+@media all and (max-width: 600px) {
+  .main__footer {
+    grid-template: repeat(3, auto) / 1fr;
+  }
+}
+
+.footer__text {
+  grid-column: 1 / -1;
+}
+
+.footer__text,
+.main__footer_links a {
+  font-size: 12px;
+  color: #666;
+}
+
+.main__footer_links a {
+  text-decoration: underline #666;
+}
+
+.main__footer_links,
+.main__footer_links li {
+  display: inline;
+}
+
+.footer__social {
+  display: flex;
+  justify-self: end;
+}
+
+/*---Other Articles---*/
+
+.read_more {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-rows: repeat(2, auto);
+  grid-gap: 1.5em;
+  max-width: 1200px;
+  margin: 2.5em;
+  overflow-wrap: anywhere;
+}
+
+h3 {
+  font-size: 14px;
+  font-weight: bold;
+  color: #000;
+  margin: 1em 0;
+}
+
+
+@media all and (max-width: 600px) {
+  .read_more {
+    margin: 2.5em 0;
+  }
+
+  h3 {
+    margin: 1.5em;
+  }
+
+}
+
+  /*Space and Editors' Picks*/
+
+.read_more__space {
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding-bottom: 1.5em;
+}
+
+.space__articles,
+.editors__articles {
+  display: grid;
+  grid-gap: 1.2em;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.more__title,
+.more__credits,
+.article > a {
+  font-family: 'nytcheltenhammedium', 'nytfranklincwmedium', Helvetica, Arial, sans-serif;
+}
+
+.more__title,
+.article > a {
+  font-size: 18px;
+  color: #121212;
+}
+
+.more__title,
+.popular__articles .article {
+  line-height: 22px;
+}
+
+.more__credits {
+  font-size: 10px;
+  color: #999;
+  text-align: end;
+}
+
+.more__date {
+  font-size: 12px;
+  color: #999;
+}
+
+
+
+@media all and (max-width: 1020px) {
+
+  .space__articles,
+  .editors__articles {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media all and (max-width: 600px) {
+  .space__articles,
+  .editors__articles {
+    grid-template-columns: 1fr;
+  }
+
+  .space__articles li:first-child .more__title,
+  .editors__articles li:first-child .more__title,
+  .space__articles li:first-child .more__credits,
+  .editors__articles li:first-child .more__credits,
+  .space__articles li:first-child .more__date,
+  .editors__articles li:first-child .more__date {
+    padding: 0 18px;
+  }
+
+  .space__articles li:nth-child(n+2) .more__credits,
+  .editors__articles li:nth-child(n+2) .more__credits {
+    display: none;
+  }
+
+  .space__articles li:nth-child(n+2) a,
+  .editors__articles li:nth-child(n+2) a {
+    display: grid;
+    grid-template: repeat(2, auto) / 7fr 1fr;
+    column-gap: 30px;
+    margin: 0 1em;
+    padding-top: .75em;
+    border-top: 1px solid #e2e2e2;
+  }
+
+  .space__articles li:nth-child(n+2) img,
+  .editors__articles li:nth-child(n+2) img {
+    grid-row: 1 / -1;
+    grid-column: 2;
+  }
+
+}
+
+  /*Most popular*/
+
+.read_more__most_popular {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  border-top: 1px solid black;
+}
+
+.popular__articles .article {
+  padding: 1em 0;
+  border-top: 1px solid rgb(226, 226, 226);
+}
+
+@media all and (max-width: 740px) {
+
+  .read_more {
+    grid-template-columns: 1fr;
+  }
+
+  .read_more__most_popular {
+    display: none;
+  }
+}
+
+/*---Nav---*/
+
+.nav {
+  max-width: 1200px;
+  width: 100%;
+  border-top: 1px double #e2e2e2;
+  border-bottom: 1px solid #e2e2e2;
+  padding: 1em;
+}
+
+  /*Nav Header*/
+
+.nav header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em 0;
+}
+
+.nav header svg {
+  height: 25px;
+  width: auto;
+}
+
+.nav__home {
+  font-size: 11px;
+  color: #567B95;
+}
+
+  /*Nav Links*/
+
+.nav__categories {
+  display: grid;
+  grid-template: repeat(2, 1fr) / repeat(6, 1fr);
+}
+
+h5 {
+  font-size: 13px;
+  font-weight: bold;
+  padding: 1em 0;
+}
+
+@media all and (max-width: 1020px) {
+
+  h5 {
+    border-top: 1px solid #e2e2e2;
+  }
+
+}
+
+.category a {
+  font-size: 14px;
+  line-height: 25px;
+  color: #000;
+}
+
+.category {
+  grid-row: 1 / -1;
+}
+
+.category__more {
+  border-right: 1px solid #e2e2e2;
+}
+
+.category__subscribe,
+.category__misc {
+  margin-left: 1em;
+}
+
+.category__subscribe {
+  grid-row: 1 / span 1;
+  border-bottom: 1px solid #e2e2e2;
+  padding-bottom: .75em;
+}
+
+.category__subscribe svg {
+  vertical-align: middle;
+}
+
+.category__misc {
+  grid-row: 2 / span 1;
+  padding-top: .75em;
+}
+
+a.small_link{
+  font-size: 11px;
+}
+
+/*---Footer---*/
+
+.footer {
+  width: 100%;
+  max-width: 1100px;
+  padding: 1em 0;
+}
+
+.footer__links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+}
+
+.footer__links ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.footer__links ul li {
+  margin: .5em;
+}
+
+@media all and (max-width: 1020px) {
+  .footer__links {
+    display: grid;
+    grid-template: repeat(2, auto) / 1fr;
+    justify-items: center;
+    row-gap: 20px;
+  }
+
+  .footer__links li:first-child {
+    grid-column: 1 / -1;
+  }
+
+}
+
+.footer__links a {
+  color: #666;
+  text-decoration: none;
+}
+
+/*---Media Queries---*/
+
+.small_devices {
+  display: none;
+}
+
+@media all and (max-width: 1020px) {
+  .small_devices {
+    display: initial;
+  }
+  
+  .desktop {
+    display: none;
+  }
+
 }
