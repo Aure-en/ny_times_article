@@ -168,6 +168,26 @@ img {
   font-weight: 700;
 }
 
+  /*User (Small devices)*/
+
+  .user.small_devices {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    padding: .5em;
+  }
+
+  .user.small_devices a {
+    font-size: 10px;
+    color: #326891;
+  }
+
+  .user.small_devices a:first-child {
+    margin-right: .5em;
+    padding-right: .5em;
+    border-right: 1px solid #e2e2e2;
+  }
+
 /*---Main---*/
 
 main {
